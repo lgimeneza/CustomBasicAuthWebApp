@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>admin</Username>
+    <Password>123</Password>
+    <Roles>
+      <string>ADMIN</string>
+      <string>PAGE_1</string>
+      <string>PAGE_2</string>
+      <string>PAGE_3</string>
+    </Roles>
+  </User>
+  <User>
+    <Username>page1</Username>
+    <Password>123</Password>
+    <Roles>
+      <string>PAGE_1</string>
+    </Roles>
+  </User>
+  <User>
+    <Username>page2</Username>
+    <Password>123</Password>
+    <Roles>
+      <string>PAGE_2</string>
+    </Roles>
+  </User>
+  <User>
+    <Username>page3</Username>
+    <Password>123</Password>
+    <Roles>
+      <string>PAGE_3</string>
+    </Roles>
+  </User>
+</ArrayOfUser>

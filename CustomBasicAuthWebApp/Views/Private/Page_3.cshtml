@@ -1,0 +1,11 @@
+﻿<header>
+    @Html.ActionLink("Index", "Index", "Home")
+</header>
+
+<h1>Page 3</h1>
+
+<h2>Hello @HttpContext.Current.User.Identity.Name</h2>
+
+<div>
+    @Html.ActionLink("Logout", "Logout", "Home")
+</div>
