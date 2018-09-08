@@ -14,20 +14,20 @@ For the learning purpose of this example I have avoided to use the new ASP.NET I
 
 Start Visual Studio and select **Open Project / Solution** from the Start page. Or, from the File menu, select **Open** and then **Project/Solution**. Press **F5** to start debugging the application. The web page should look like the following:
 
-![](Docs/Images/index.png)
+![](Docs/Images/index.PNG)
 
 
 If you try to access one of the links without the right session, you should be redirected to the login page:
 
-![](Docs/Images/login.png)
+![](Docs/Images/login.PNG)
 
 Once you have entered the username and password with the proper role, you should have access to the requested page:
 
-![](Docs/Images/page1.png)
+![](Docs/Images/page1.PNG)
 
 Otherwise if you don't enter with the right role, you will be redirected to an access denied page.
 
-![](Docs/Images/denied.png)
+![](Docs/Images/denied.PNG)
 
 All the usernames and passwords for this example are stored in **users.xml** file in the **App_Data** folder of the project.
 
@@ -35,7 +35,7 @@ All the usernames and passwords for this example are stored in **users.xml** fil
 
 The solution has two projects:
 
-![](Docs/Images/solution.png)
+![](Docs/Images/solution.PNG)
 
 The StartUp project has all the files needed to build and run de app. There is also a test project with some UnitTesting files that can be run through **Test Explorer**.
 
