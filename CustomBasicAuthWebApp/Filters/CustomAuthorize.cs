@@ -2,6 +2,9 @@
 
 namespace CustomBasicAuthWebApp.Filters
 {
+    /// <summary>
+    /// Extends AuthorizeAttibute for redirect unauthorized request to a custom url
+    /// </summary>
     public class CustomAuthorize : AuthorizeAttribute
     {
         public override void OnAuthorization(AuthorizationContext filterContext)

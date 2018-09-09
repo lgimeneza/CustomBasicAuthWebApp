@@ -10,7 +10,7 @@ using CustomBasicAuthWebApp.Models;
 namespace CustomBasicAuthWebApp.DataAccessLayer
 {
     /// <summary>
-    /// handles the presistency of the data in a xml file
+    /// Handles the presistency of the User model in a xml file
     /// </summary>
     public class XmlUserDbDAL : IUserDbDAL
     {

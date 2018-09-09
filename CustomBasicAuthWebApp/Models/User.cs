@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace CustomBasicAuthWebApp.Models
 {
     /// <summary>
-    /// Implemets the user model that handles the busines logic
-    /// The user model will have a “username” field, a “roles” field and a “password” field.
+    /// Represents User Model
     /// </summary>
     public class User
     {
+        // The user model will have a “username” field, a “roles” field and a “password” field.
         [Required(ErrorMessage = Constants.ErrMsgUserNameRequired)]
         [MinLength(3, ErrorMessage = Constants.ErrMsgMinLength)]
         [StringLength(50, ErrorMessage = Constants.ErrMsgMaxLength)]

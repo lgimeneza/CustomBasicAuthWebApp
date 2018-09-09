@@ -19,6 +19,7 @@ namespace CustomBasicAuthWebApp.Tests
             var controller = new UserController(testUserBL);
 
             var result = controller.Get() as List<UserViewModel>;
+            Assert.IsNotNull(result);
             Assert.AreEqual(testUsers.Count, result.Count);
         }
 
@@ -64,6 +65,34 @@ namespace CustomBasicAuthWebApp.Tests
         }
 
         [TestMethod]
+        public void PostUser_ShouldReturnConflict()
+        {
+            var testUsers = GetTestUsers();
+            var testUserBL = new TestMockUserBusinessLayer(testUsers);
+            var controller = new UserController(testUserBL);
+
+            var u = new User { Username = "page1", Password = "123" };
+
+            var result = controller.Post(u) as ConflictResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ConflictResult));
+        }
+
+        [TestMethod]
+        public void PostUser_ShouldReturnBadRequest()
+        {
+            var testUsers = GetTestUsers();
+            var testUserBL = new TestMockUserBusinessLayer(testUsers);
+            var controller = new UserController(testUserBL);
+
+            User u = null;
+
+            var result = controller.Post(u) as BadRequestErrorMessageResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(BadRequestErrorMessageResult));
+        }
+
+        [TestMethod]
         public void PutUser_ShouldReturnStatusCode()
         {
             var testUsers = GetTestUsers();
@@ -102,6 +131,19 @@ namespace CustomBasicAuthWebApp.Tests
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(StatusCodeResult));
             Assert.AreEqual(HttpStatusCode.NoContent, result.StatusCode);
+        }
+
+        [TestMethod]
+        public void DeleteUser_ShouldReturn_NotFound()
+        {
+            var testUsers = GetTestUsers();
+            var testUserBL = new TestMockUserBusinessLayer(testUsers);
+            var controller = new UserController(testUserBL);
+            var result = controller.Delete("fakepage") as NotFoundResult;
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(NotFoundResult));
+            //Assert.AreEqual(HttpStatusCode.NoContent, result.StatusCode);
         }
 
         private List<User> GetTestUsers()

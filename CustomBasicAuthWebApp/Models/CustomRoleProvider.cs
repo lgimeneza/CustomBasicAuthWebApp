@@ -2,6 +2,9 @@
 
 namespace CustomBasicAuthWebApp.Models
 {
+    /// <summary>
+    /// Overrides RoleProvider to use User model 
+    /// </summary>
     public class CustomRoleProvider : RoleProvider
     {
         public override string[] GetRolesForUser(string username)

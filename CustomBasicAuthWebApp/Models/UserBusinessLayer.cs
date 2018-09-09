@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace CustomBasicAuthWebApp.Models
 {
+    /// <summary>
+    /// Represents BusinessLayer of User Model
+    /// </summary>
     public class UserBusinessLayer : IUserBusinessLayer
     {
         private IUserDbDAL _userDbDAL;
